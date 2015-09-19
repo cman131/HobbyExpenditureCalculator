@@ -14,7 +14,6 @@ function showUserInfo1() {
         document.getElementById('Rent').style.display = 'none'
         document.getElementById('Buy').style.display = 'none'
         document.getElementById('Hobbies').style.display = 'none'
-        document.getElementById('Results').style.display = 'none'
     }
 }
 
@@ -27,7 +26,6 @@ function showUserInfo2() {
         document.getElementById('Rent').style.display = 'none'
         document.getElementById('Buy').style.display = 'none'
         document.getElementById('Hobbies').style.display = 'none'
-        document.getElementById('Results').style.display = 'none'
     }
 }
 
@@ -40,7 +38,6 @@ function showRent() {
         document.getElementById('Rent').style.display = 'block'
         document.getElementById('Buy').style.display = 'none'
         document.getElementById('Hobbies').style.display = 'none'
-        document.getElementById('Results').style.display = 'none'
     }
 }
 
@@ -53,7 +50,6 @@ function showBuy() {
         document.getElementById('Rent').style.display = 'none'
         document.getElementById('Buy').style.display = 'Buy'
         document.getElementById('Hobbies').style.display = 'none'
-        document.getElementById('Results').style.display = 'none'
     }
 }
 
@@ -66,7 +62,6 @@ function showHobbie() {
         document.getElementById('Rent').style.display = 'none'
         document.getElementById('Buy').style.display = 'none'
         document.getElementById('Hobbies').style.display = 'block'
-        document.getElementById('Results').style.display = 'none'
     }
 }
 
