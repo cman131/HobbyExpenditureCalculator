@@ -15,7 +15,14 @@ namespace HobbyExpenditureCalculator.Models
 //Variables
         public List<Hobbies> HobbiesList { get; set; }
         public List<LivingLocation> LocationList { get; set; }
+        public List<System.Dynamic.ExpandoObject> Results { get; set; }
 
+        /*This should only be true if:
+        -Age >= 59.5
+        -First Home
+        -Haven't owned a home in 2 years
+        */
+        public bool NoPenalty { get; set; }
         public double Income { get; set;}
         public int YearCount { get; set; }
 //Constructor
@@ -25,18 +32,15 @@ namespace HobbyExpenditureCalculator.Models
             this.HobbiesList = new List<Hobbies>();
             this.LocationList = new List<LivingLocation>();
         }
-//Mehtods
-        public double MoneySaved( LivingLocation location )
+//Methods
+        public double MoneyLeftOverYearly( LivingLocation location )
         {
-            return 0.0; //To Do: Create a function to calculate how much money is saved
+            return this.Income-((location.getTotalCost()-location.getTotalDeduction())/YearCount) ;
         }
 
         public int HobbiesConsumption( double expendableMoney, Hobbies hobby )
         {
-            return 0; //To Do: Create a function to tell how many of one hobby you can consume now
+            return Convert.ToInt32(expendableMoney/hobby.GetCost());
         }
-
-
-
     }
 }

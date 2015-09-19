@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace HobbyExpenditureCalculator.Controllers
 {
     public class HomeController : Controller
@@ -13,6 +14,11 @@ namespace HobbyExpenditureCalculator.Controllers
             return View();
         }
 
+        public ActionResult Index( HobbyExpenditureCalculator.Models.HomeViewModel model )
+        {
+            return RedirectToAction("", "", new { });
+        }
+        
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
