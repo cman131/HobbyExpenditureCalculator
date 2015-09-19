@@ -18,13 +18,14 @@ namespace HobbyExpenditureCalculator.Models
          *   housing unit for yearCount years with the given income
          */
         public abstract double getTotalCost();
+        public abstract double getTotalDeduction();
     }
 
     public class RentalLocation : LivingLocation
     {
         double rent { get; set; }
 
-        public RentalLocation(string name, string state, string city, double rent, double income, int yearCount)
+        public RentalLocation(string name, string state, string city, double income, int yearCount, double rent)
         {
             this.name = name;
             this.state = state;
@@ -43,6 +44,14 @@ namespace HobbyExpenditureCalculator.Models
         public override double getTotalCost()
         {
             return rent * 12 * this.yearCount;
+        }
+
+        /*
+         * This total is in relation to the purchase deductions
+         */
+        public override double getTotalDeduction()
+        {
+            return 0;
         }
     }
 
@@ -84,7 +93,7 @@ namespace HobbyExpenditureCalculator.Models
         /*
          * 
          */
-        public double getTotalDeductions()
+        public override double getTotalDeduction()
         {
             double mortgage = getTotalCost() - this.downPayment - this.loan;
             return this.downPayment + this.premiumRate * 12 * this.yearCount + this.localPropertyTaxes * 12 * this.yearCount;
