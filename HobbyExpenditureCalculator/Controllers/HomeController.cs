@@ -14,10 +14,10 @@ namespace HobbyExpenditureCalculator.Controllers
             return View();
         }
 
-        public ActionResult Index( HobbyExpenditureCalculator.Models.HomeViewModel model )
+        /*public ActionResult Index( HobbyExpenditureCalculator.Models.HomeViewModel model )
         {
             return RedirectToAction("", "", new { });
-        }
+        }*/
         
         public ActionResult About()
         {

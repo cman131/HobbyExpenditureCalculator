@@ -15,7 +15,6 @@ namespace HobbyExpenditureCalculator.Models
 //Variables
         public List<Hobbies> HobbiesList { get; set; }
         public List<LivingLocation> LocationList { get; set; }
-        public List<System.Dynamic.ExpandoObject> Results { get; set; }
 
         /*This should only be true if:
         -Age >= 59.5

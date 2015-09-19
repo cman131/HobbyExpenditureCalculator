@@ -243,7 +243,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Hobbies\Index.cshtml" />
     <Content Include="Views\FAQ\Index.cshtml" />
-    <Content Include="Views\Home\_UserInfo.cshtml" />
+    <Content Include="Views\Home\HomePartials\_UserInfo.cshtml" />
+    <Content Include="Views\Home\HomePartials\_UserInfo2.cshtml" />
+    <Content Include="Views\Home\HomePartials\_Rent.cshtml" />
+    <Content Include="Views\Home\HomePartials\_Buy.cshtml" />
+    <Content Include="Views\Home\HomePartials\_Hobbies.cshtml" />
+    <Content Include="Views\Home\HomePartials\_Results.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
