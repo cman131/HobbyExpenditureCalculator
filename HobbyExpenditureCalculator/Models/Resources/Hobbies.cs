@@ -11,7 +11,7 @@ namespace HobbyExpenditureCalculator.Models
     public class Hobbies
     {
 //Variables
-        private double costPerConsumption { get; set;}
+        public double costPerConsumption { get; set;}
         public string name { get; set; }
 //Constructors
 

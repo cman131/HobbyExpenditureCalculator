@@ -175,8 +175,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\Hobbies.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Models\Resources\Hobbies.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
