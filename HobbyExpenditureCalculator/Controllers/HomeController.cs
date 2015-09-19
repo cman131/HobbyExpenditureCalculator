@@ -9,11 +9,13 @@ namespace HobbyExpenditureCalculator.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public ActionResult Index()
         {
             return View(new Models.HomeViewModel());
         }
 
+        [HttpPost]
         public ActionResult Index( HobbyExpenditureCalculator.Models.HomeViewModel model )
         {
             return View(model);
