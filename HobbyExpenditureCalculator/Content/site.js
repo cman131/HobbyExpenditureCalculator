@@ -1,9 +1,20 @@
-﻿function swapDivDisplayed(elements) {
-    var formParts = document.getElementsByClassName('form-part');
-    for (var i = 0; i < formParts.length; i++) {
-        formParts[i].style.display = 'none';
+﻿function showDiv2() {
+    if (document.getElementById('userinfo1').style.display == 'block') {
+        document.getElementById('userinfo1').style.display = 'none';
+        document.getElementById('userinfo2').style.display = 'block';
+        document.getElementById('usersubmit').style.display = 'none';
     }
-    for (var i = 0; i < elements; i++) {
-        elements[i].style.display = 'block'
+}
+
+function showSubmit() {
+    if (document.getElementById('userinfo2').style.display == 'block') {
+        document.getElementById('userinfo1').style.display = 'none';
+        document.getElementById('userinfo2').style.display = 'none';
+        document.getElementById('userSubmit').style.display = 'block';
     }
+}
+
+function selectHousing(type) {
+    document.getElementById('userinfo2');
+    document.getElementById(type).style.display = 'block';
 }
