@@ -24,6 +24,8 @@ namespace HobbyExpenditureCalculator.Controllers
             if(Request.Form["LocationType"]=="Buy") {
                 model.Location = new PurchaseLocation(Request.Form["name"], Request.Form["state"], Request.Form["city"], model.Income, model.YearCount, Convert.ToDouble(Request.Form["Loan"]), Convert.ToDouble(Request.Form["interest"]), Convert.ToDouble(Request.Form["downPayment"]), Convert.ToDouble(Request.Form["prate"]), Convert.ToDouble(Request.Form["localtax"]));
             }
+            model.LocationList.Add(model.Location);
+            model.HobbiesList.Add(model.Hobby);
 
             return View(model);
         }
