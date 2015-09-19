@@ -1,4 +1,3 @@
-﻿
 function showUserInfo1() {
     var nextPartial = document.getElementById('userinfo1');
     if (nextPartial.style.display == 'none') {
@@ -69,4 +68,9 @@ function showResults() {
         document.getElementById('Hobbies').style.display = 'none'
         document.getElementById('Results').style.display = 'block'
     }
+}
+
+function selectHousing(type) {
+    document.getElementById('userinfo2');
+    document.getElementById(type).style.display = 'block';
 }
