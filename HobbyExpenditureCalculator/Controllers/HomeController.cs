@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HobbyExpenditureCalculator.Models;
 
 
 namespace HobbyExpenditureCalculator.Controllers
@@ -18,6 +20,11 @@ namespace HobbyExpenditureCalculator.Controllers
         [HttpPost]
         public ActionResult Index( HobbyExpenditureCalculator.Models.HomeViewModel model )
         {
+            NameValueCollection location = Request.Form;
+            if(Request.Form["LocationType"]=="Buy") {
+                model.Location = new PurchaseLocation(Request.Form["name"], Request.Form["state"], Request.Form["city"], model.Income, model.YearCount, Convert.ToDouble(Request.Form["Loan"]), Convert.ToDouble(Request.Form["interest"]), Convert.ToDouble(Request.Form["downPayment"]), Convert.ToDouble(Request.Form["prate"]), Convert.ToDouble(Request.Form["localtax"]));
+            }
+
             return View(model);
         }
         

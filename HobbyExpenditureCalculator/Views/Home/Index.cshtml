@@ -12,7 +12,7 @@
         }
         else
         {
-            using (Html.BeginForm())
+            using (Html.BeginForm(new { novalidate="" }))
             {
                 <fieldset background-color="#FFFF99">
                     @{ Html.RenderPartial("HomePartials/_Home"); }

@@ -53,7 +53,7 @@ function showBuy() {
     }
 }
 
-function showHobbie() {
+function showHobbies() {
     var nextPartial = document.getElementById('Hobbies');
     if (nextPartial.style.display == 'none') {
         document.getElementById('home').style.display = 'none'
