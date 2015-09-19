@@ -15,7 +15,7 @@ namespace HobbyExpenditureCalculator.Models
          * Retrieves the total cost that would have to be paid to live in this
          *   housing unit for yearCount years with the given income
          */
-        public abstract double getTotalCost(int yearCount, double income);
+        public abstract double getTotalCost(double income, int yearCount);
     }
 
     public class RentalLocation : LivingLocation
@@ -36,7 +36,7 @@ namespace HobbyExpenditureCalculator.Models
          *   we will make the ideal assumption that the customer will treat the place
          *   well and receive their security deposit back when they finish renting.
          */
-        public override double getTotalCost(int yearCount, double income)
+        public override double getTotalCost(double income, int yearCount)
         {
             return rent * 12 * yearCount;
         }
@@ -44,28 +44,28 @@ namespace HobbyExpenditureCalculator.Models
 
     public class PurchaseLocation : LivingLocation
     {
-        double downPayment;
-        double interestRate;
         double loan;
+        double interestRate;
+        double downPayment;
 
-        public PurchaseLocation(string name, string state, string city, double downPayment, double interestRate, double loan, double monthlyPayment)
+        public PurchaseLocation(string name, string state, string city, double loan, double interestRate, double downPayment)
         {
             this.name = name;
             this.state = state;
             this.city = city;
-            this.downPayment = downPayment;
-            this.interestRate = interestRate;
             this.loan = loan;
+            this.interestRate = interestRate;
+            this.downPayment = downPayment;
         }
 
         /*
          * Retrieves the total amount of money paid into their mortgage over yearCount years.
          * This method makes the assumption that the customer has the intention of paying off their loan in the given time.
          */
-        public override double getTotalCost(int yearCount, double income)
+        public override double getTotalCost(double income, int yearCount)
         {
             double monthly = (this.loan-this.downPayment) * (this.interestRate * Math.Pow(1 + this.interestRate, yearCount * 12)) / (Math.Pow(1 + this.interestRate, yearCount * 12) - 1);
-            return monthly * 12 + this.downPayment;
+            return monthly * 12 * yearCount + this.downPayment;
         }
     }
 
