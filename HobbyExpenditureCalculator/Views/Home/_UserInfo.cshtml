@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "User Info";
+}
+
+
+
+<div>
+    <form method="post" action="temp2">
+        <fieldset background-color="#FFFF99" >
+            <legend>User Info</legend>
+            <div class="form-inline" id="userinfo1" style="display:block">
+                <label class="form-inline">Income: <input type="text" name="name" id="name" required="required" size="50px"  class="form-control" class="form-inline"></label><br>
+                <label class="form-inline">Hobby: <input type="text" name="hobby" id="hobby" required="required" size="50px"  class="form-control" class="form-inline"></label><br>
+                <input type="button" name="nextDiv1" id="income_tax_submission" value="Next" onclick="javascript: showDiv2();"></input>
+            </div>
+            <div class="form-inline" id="userinfo2" style="display: none">
+                <label>Apartment: <input type="text" name="apartment" id="user_apartment" required="required" size="50px" class="form-control" class="form-inline"></label><br>
+                <label>House: <input type="text" name="house" id="user_house" required="required" size="50px" class="form-control" class="form-inline"></label><br>
+                <input type="submit" name="submit" id="income_tax_submission" value="Submit"></input>
+            </div>
+ 
+         </fieldset>
+        <hr>
+       
+         
+        
+    </form>
+
+</div>
