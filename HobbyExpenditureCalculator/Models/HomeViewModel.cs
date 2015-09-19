@@ -17,7 +17,7 @@ namespace HobbyExpenditureCalculator.Models
         public List<LivingLocation> LocationList { get; set; }
 
         public Hobbies Hobby { get; set; }
-        public String[] Location { get; set; }
+        public LivingLocation Location { get; set; }
 
         /*This should only be true if:
         -Age >= 59.5
@@ -30,7 +30,6 @@ namespace HobbyExpenditureCalculator.Models
         //Constructor
         public HomeViewModel()
         {
-            this.Location = new String[8];
             this.HobbiesList = new List<Hobbies>();
             this.LocationList = new List<LivingLocation>();
         }
