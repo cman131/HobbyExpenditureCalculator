@@ -19,6 +19,7 @@ namespace HobbyExpenditureCalculator.Models
          */
         public abstract double getTotalCost();
         public abstract double getTotalDeduction();
+        public abstract bool canAfford();
     }
 
     public class RentalLocation : LivingLocation
@@ -52,6 +53,11 @@ namespace HobbyExpenditureCalculator.Models
         public override double getTotalDeduction()
         {
             return 0;
+        }
+
+        public override bool canAfford()
+        {
+            return this.income > this.rent * 12;
         }
     }
 
@@ -97,6 +103,11 @@ namespace HobbyExpenditureCalculator.Models
         {
             double mortgage = getTotalCost() - this.downPayment - this.loan;
             return this.downPayment + this.premiumRate * 12 * this.yearCount + this.localPropertyTaxes * 12 * this.yearCount;
+        }
+
+        public override bool canAfford()
+        {
+            return this.income > this.getTotalCost() / this.yearCount;
         }
     }
 
