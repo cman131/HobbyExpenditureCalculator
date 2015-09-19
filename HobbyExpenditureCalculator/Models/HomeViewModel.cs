@@ -15,6 +15,7 @@ namespace HobbyExpenditureCalculator.Models
 //Variables
         public List<Hobbies> HobbiesList { get; set; }
         public List<LivingLocation> LocationList { get; set; }
+        public int submittedFlag { get; set; }
 
         public Hobbies Hobby { get; set; }
         public LivingLocation Location { get; set; }

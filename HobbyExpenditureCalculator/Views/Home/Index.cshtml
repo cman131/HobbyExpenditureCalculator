@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="jumbotron">
-        @if (false)
+        @if (Model.submittedFlag == 1)
         {
             Html.RenderPartial("HomePartials/_Results");
         }
@@ -14,6 +14,7 @@
         {
             using (Html.BeginForm(new { novalidate="" }))
             {
+                <input type="hidden" name="submittedFlag" value="1">
                 <fieldset background-color="#FFFF99">
                     @{ Html.RenderPartial("HomePartials/_Home"); }
 
