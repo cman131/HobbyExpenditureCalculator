@@ -24,10 +24,9 @@ namespace HobbyExpenditureCalculator.Models
         public bool NoPenalty { get; set; }
         public double Income { get; set;}
         public int YearCount { get; set; }
-//Constructor
-        public HomeViewModel(double argsIncome)
+        //Constructor
+        public HomeViewModel()
         {
-            this.Income = argsIncome;
             this.HobbiesList = new List<Hobbies>();
             this.LocationList = new List<LivingLocation>();
         }
