@@ -17,14 +17,26 @@ namespace HobbyExpenditureCalculator.Models
         public List<LivingLocation> LocationList { get; set; }
 
         public double Income { get; set;}
+        public int YearCount { get; set; }
 //Constructor
         public HomeViewModel(double argsIncome)
         {
             this.Income = argsIncome;
             this.HobbiesList = new List<Hobbies>();
-
-
+            this.LocationList = new List<LivingLocation>();
         }
+//Mehtods
+        public double MoneySaved( LivingLocation location )
+        {
+            return 0.0; //To Do: Create a function to calculate how much money is saved
+        }
+
+        public int HobbiesConsumption( double expendableMoney, Hobbies hobby )
+        {
+            return 0; //To Do: Create a function to tell how many of one hobby you can consume now
+        }
+
+
 
     }
 }
