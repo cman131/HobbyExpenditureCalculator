@@ -7,27 +7,31 @@ namespace HobbyExpenditureCalculator.Models
 {
     public abstract class LivingLocation
     {
-        protected string name;
-        protected string state;
-        protected string city;
+        public string name { get; set; }
+        public string state { get; set; }
+        public string city { get; set; }
+        public int yearCount { get; set; }
+        public double income { get; set; }
 
         /*
          * Retrieves the total cost that would have to be paid to live in this
          *   housing unit for yearCount years with the given income
          */
-        public abstract double getTotalCost(double income, int yearCount);
+        public abstract double getTotalCost();
     }
 
     public class RentalLocation : LivingLocation
     {
-        double rent;
+        double rent { get; set; }
 
-        public RentalLocation(string name, string state, string city, double rent)
+        public RentalLocation(string name, string state, string city, double rent, double income, int yearCount)
         {
             this.name = name;
             this.state = state;
             this.city = city;
             this.rent = rent;
+            this.yearCount = yearCount;
+            this.income = income;
         }
 
         /*
@@ -36,19 +40,23 @@ namespace HobbyExpenditureCalculator.Models
          *   we will make the ideal assumption that the customer will treat the place
          *   well and receive their security deposit back when they finish renting.
          */
-        public override double getTotalCost(double income, int yearCount)
+        public override double getTotalCost()
         {
-            return rent * 12 * yearCount;
+            return rent * 12 * this.yearCount;
         }
     }
 
     public class PurchaseLocation : LivingLocation
     {
-        double loan;
-        double interestRate;
-        double downPayment;
+        public double loan { get; set; }
+        public double interestRate { get; set; }
+        public double downPayment { get; set; }
+        public double totalDeductions { get; set; }
+        public double premiumRate { get; set; }
+        public double localPropertyTaxes { get; set; }
 
-        public PurchaseLocation(string name, string state, string city, double loan, double interestRate, double downPayment)
+        public PurchaseLocation(string name, string state, string city, double loan,
+            double interestRate, double downPayment, double premiumRate, double income, int yearCount, double localPropertyTaxes)
         {
             this.name = name;
             this.state = state;
@@ -56,16 +64,30 @@ namespace HobbyExpenditureCalculator.Models
             this.loan = loan;
             this.interestRate = interestRate;
             this.downPayment = downPayment;
+            this.income = income;
+            this.yearCount = yearCount;
+            this.localPropertyTaxes = localPropertyTaxes;
         }
 
         /*
          * Retrieves the total amount of money paid into their mortgage over yearCount years.
          * This method makes the assumption that the customer has the intention of paying off their loan in the given time.
          */
-        public override double getTotalCost(double income, int yearCount)
+        public override double getTotalCost()
         {
-            double monthly = (this.loan-this.downPayment) * (this.interestRate * Math.Pow(1 + this.interestRate, yearCount * 12)) / (Math.Pow(1 + this.interestRate, yearCount * 12) - 1);
-            return monthly * 12 * yearCount + this.downPayment;
+            double monthly = (this.loan-this.downPayment) * (this.interestRate *
+                Math.Pow(1 +this.interestRate, this.yearCount * 12)) / (Math.Pow(1 + this.interestRate, this.yearCount * 12) - 1);
+            return monthly * 12 * this.yearCount + this.downPayment + 12 * this.yearCount *
+                this.premiumRate + 12 * this.yearCount * this.localPropertyTaxes;
+        }
+
+        /*
+         * 
+         */
+        public double getTotalDeductions()
+        {
+            double mortgage = getTotalCost() - this.downPayment - this.loan;
+            return this.downPayment + this.premiumRate * 12 * this.yearCount + this.localPropertyTaxes * 12 * this.yearCount;
         }
     }
 
