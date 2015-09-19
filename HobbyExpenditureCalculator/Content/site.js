@@ -8,6 +8,7 @@
 function showUserInfo1() {
     var nextPartial = document.getElementById('userinfo1');
     if (nextPartial.style.display == 'none') {
+        document.getElementById('home').style.display = 'none'
         document.getElementById('userinfo1').style.display = 'block'
         document.getElementById('userinfo2').style.display = 'none'
         document.getElementById('Rent').style.display = 'none'
@@ -20,6 +21,7 @@ function showUserInfo1() {
 function showUserInfo2() {
     var nextPartial = document.getElementById('userinfo2');
     if (nextPartial.style.display == 'none') {
+        document.getElementById('home').style.display = 'none'
         document.getElementById('userinfo1').style.display = 'none'
         document.getElementById('userinfo2').style.display = 'block'
         document.getElementById('Rent').style.display = 'none'
@@ -32,6 +34,7 @@ function showUserInfo2() {
 function showRent() {
     var nextPartial = document.getElementById('Rent');
     if (nextPartial.style.display == 'none') {
+        document.getElementById('home').style.display = 'none'
         document.getElementById('userinfo1').style.display = 'none'
         document.getElementById('userinfo2').style.display = 'none'
         document.getElementById('Rent').style.display = 'block'
@@ -44,6 +47,7 @@ function showRent() {
 function showBuy() {
     var nextPartial = document.getElementById('Buy');
     if (nextPartial.style.display == 'none') {
+        document.getElementById('home').style.display = 'none'
         document.getElementById('userinfo1').style.display = 'none'
         document.getElementById('userinfo2').style.display = 'none'
         document.getElementById('Rent').style.display = 'none'
@@ -56,6 +60,7 @@ function showBuy() {
 function showHobbie() {
     var nextPartial = document.getElementById('Hobbies');
     if (nextPartial.style.display == 'none') {
+        document.getElementById('home').style.display = 'none'
         document.getElementById('userinfo1').style.display = 'none'
         document.getElementById('userinfo2').style.display = 'none'
         document.getElementById('Rent').style.display = 'none'
@@ -68,6 +73,7 @@ function showHobbie() {
 function showResults() {
     var nextPartial = document.getElementById('Results');
     if (nextPartial.style.display == 'none') {
+        document.getElementById('home').style.display = 'none'
         document.getElementById('userinfo1').style.display = 'none'
         document.getElementById('userinfo2').style.display = 'none'
         document.getElementById('Rent').style.display = 'none'
