@@ -22,7 +22,10 @@ namespace HobbyExpenditureCalculator.Controllers
         {
             NameValueCollection location = Request.Form;
             if(Request.Form["LocationType"]=="Buy") {
-                model.Location = new PurchaseLocation(Request.Form["name"], Request.Form["state"], Request.Form["city"], model.Income, model.YearCount, Convert.ToDouble(Request.Form["Loan"]), Convert.ToDouble(Request.Form["interest"]), Convert.ToDouble(Request.Form["downPayment"]), Convert.ToDouble(Request.Form["prate"]), Convert.ToDouble(Request.Form["localtax"]));
+                model.Location = new PurchaseLocation(Request.Form["Name"], Request.Form["State"], Request.Form["City"], model.Income, model.YearCount, Convert.ToDouble(Request.Form["Loan"]), Convert.ToDouble(Request.Form["interest"]), Convert.ToDouble(Request.Form["downPayment"]), Convert.ToDouble(Request.Form["prate"]), Convert.ToDouble(Request.Form["localtax"]));
+            } else
+            {
+                model.Location = new RentalLocation(Request.Form["Name"], Request.Form["State"], Request.Form["City"], model.Income, model.YearCount, Convert.ToDouble(Request.Form["Rent"]));
             }
             model.LocationList.Add(model.Location);
             model.HobbiesList.Add(model.Hobby);

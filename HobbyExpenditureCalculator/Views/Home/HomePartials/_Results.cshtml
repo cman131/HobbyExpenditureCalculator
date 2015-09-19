@@ -1,9 +1,6 @@
-﻿@model HobbyExpenditureCalculator.Models.HomeViewModel
-
-<div id="Results" class="form-part" style="display:none">
-    @if ( Model.NoPenalty )
-    {
-        for ( int i=0;i<Model.LocationList.Count;i++ )
+﻿
+<div id="Results" class="form-part" style="display:block">
+        @for ( int i=0;i<Model.LocationList.Count;i++ )
         {
             if (!Model.LocationList[i].canAfford())
             {
@@ -37,7 +34,6 @@
                     </p>
                 }
             }
-        }
     }
 
 
