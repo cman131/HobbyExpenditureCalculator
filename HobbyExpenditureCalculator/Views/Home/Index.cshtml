@@ -3,6 +3,13 @@
 }
 
 <script>
+    function swapDivDisplayed(element) {
+        var formParts = document.getElementsByClassName('form-part');
+        for (var i = 0; i < formParts.length; i++) {
+            formParts[i].style.display = 'none';
+        }
+        element.style.display = 'block'
+    }
 function showDiv2() {
     if (document.getElementById('userinfo1').style.display == 'block') {
         document.getElementById('userinfo1').style.display = 'none';
