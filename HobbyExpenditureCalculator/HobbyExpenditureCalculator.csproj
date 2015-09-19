@@ -189,6 +189,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\header.css" />
     <Content Include="Content\home_page.css" />
+    <Content Include="Content\Site.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
