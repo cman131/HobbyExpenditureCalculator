@@ -84,6 +84,6 @@ function showResults() {
 }
 
 function selectHousing(type) {
-    document.getElementById('userinfo2').display = 'none';
+    document.getElementById('userinfo2').style.display = 'none';
     document.getElementById(type).style.display = 'block';
 }
