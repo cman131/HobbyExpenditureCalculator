@@ -178,6 +178,10 @@
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\Resources\LivingLocation.cs" />
     <Compile Include="Models\Resources\Hobbies.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Models\Resources\LivingLocation.cs" />
+>>>>>>> origin/master
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
