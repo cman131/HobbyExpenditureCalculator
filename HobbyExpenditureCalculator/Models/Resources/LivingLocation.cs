@@ -64,8 +64,8 @@ namespace HobbyExpenditureCalculator.Models
         public double premiumRate { get; set; }
         public double localPropertyTaxes { get; set; }
 
-        public PurchaseLocation(string name, string state, string city, double loan,
-            double interestRate, double downPayment, double premiumRate, double income, int yearCount, double localPropertyTaxes)
+        public PurchaseLocation(string name, string state, string city, double income, int yearCount, double loan,
+            double interestRate, double downPayment, double premiumRate, double localPropertyTaxes)
         {
             this.name = name;
             this.state = state;
