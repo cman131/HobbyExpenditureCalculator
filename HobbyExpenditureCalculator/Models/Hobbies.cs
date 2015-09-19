@@ -10,10 +10,10 @@ namespace HobbyExpenditureCalculator.Models
 {
     public class Hobbies
     {
-        //Variables
+//Variables
         private double costPerConsumption { get; set;}
         public string name { get; set; }
-        //Constructors
+//Constructors
 
         /// <summary>
         /// empty constructor
@@ -36,7 +36,7 @@ namespace HobbyExpenditureCalculator.Models
             this.setName(other.GetName());
         }
 
-        //Get
+//Get
 
         /// <summary>
         /// Get function for the cost
@@ -53,8 +53,10 @@ namespace HobbyExpenditureCalculator.Models
         /// <returns> the name of the hobbies as a string </returns>
         public string GetName()
         {
-            return this.Name;
+            return this.name;
         }
+
+// Set
 
         /// <summary>
         /// Set function for the name of the hobby
