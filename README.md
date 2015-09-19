@@ -1,5 +1,6 @@
 # HobbyExpenditureCalculator
-An application that takes in your living options and growth potential to determine how much you can invest in your given hobby. An example of a hobby is buying a box of Magic cards.
+An application that takes in your living options and growth potential to determine how much you can invest in your given hobby.
+Gives finacial advice for people looking to invest more into hobbies.
 
 This is for the <a href='https://github.com/intuit-recruiting/hackathon/wiki/Hack-Into-It-Challenge-Information'>Intuit hackathon</a> from 9/18/15 at 8pm until 9/19/15 at 10am.
 
@@ -11,6 +12,6 @@ and some of the pictures are in the issues. We did however find this to be a ver
 <h3>Remaining issues</h3>
 We hit our time limit, but here are the known issues we were dealing with in the end:
 <ul>
-<li>Automatically redirecting from the Housing selection pane</li>
-<li>Results not being properly displayed in the results pane</li>
+<li>Results not being properly displayed in the results pane for buying a home</li>
+<li>Does not validate inputs</li>
 </ul>
