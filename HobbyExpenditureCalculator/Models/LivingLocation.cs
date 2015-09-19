@@ -48,7 +48,7 @@ namespace HobbyExpenditureCalculator.Models
         double interestRate;
         double loan;
 
-        public PurchaseLocation(string name, string state, string city, double downPayment, double interestRate, double loan)
+        public PurchaseLocation(string name, string state, string city, double downPayment, double interestRate, double loan, double monthlyPayment)
         {
             this.name = name;
             this.state = state;
