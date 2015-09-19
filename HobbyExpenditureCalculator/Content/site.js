@@ -1,3 +1,10 @@
+﻿function swapDivDisplayed(element) {
+    var elements = document.getElementsByClassName('form-part');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = 'none';
+    }
+    element.style.display = 'block';
+}
 function showUserInfo1() {
     var nextPartial = document.getElementById('userinfo1');
     if (nextPartial.style.display == 'none') {
@@ -71,6 +78,6 @@ function showResults() {
 }
 
 function selectHousing(type) {
-    document.getElementById('userinfo2');
+    document.getElementById('userinfo2').display = 'none';
     document.getElementById(type).style.display = 'block';
 }
