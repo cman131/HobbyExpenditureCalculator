@@ -28,6 +28,11 @@ namespace HobbyExpenditureCalculator.Models
          * Checks if the person can afford to live here on their current income
          */
         public abstract bool canAfford();
+
+        /*
+         * Checks if the location is for purchase or not
+         */
+        public abstract bool isPurchase();
     }
 
     public class RentalLocation : LivingLocation
@@ -66,6 +71,11 @@ namespace HobbyExpenditureCalculator.Models
         public override bool canAfford()
         {
             return this.income > this.rent * 12;
+        }
+
+        public override bool isPurchase()
+        {
+            return false;
         }
     }
 
@@ -113,6 +123,11 @@ namespace HobbyExpenditureCalculator.Models
         public override bool canAfford()
         {
             return this.income > this.getTotalCost() / this.yearCount;
+        }
+
+        public override bool isPurchase()
+        {
+            return true;
         }
     }
 

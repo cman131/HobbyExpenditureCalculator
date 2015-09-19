@@ -1,2 +1,44 @@
-﻿<div id="Results" class="form-part" style="display:none">
+﻿@model HobbyExpenditureCalculator.Models.HomeViewModel
+
+<div id="Results" class="form-part" style="display:none">
+    @if ( Model.NoPenalty )
+    {
+        for ( int i=0;i<Model.LocationList.Count;i++ )
+        {
+            if (!Model.LocationList[i].canAfford())
+            {
+                <label color="RED"> Cannot Afford </label>
+            }
+            else
+            {
+                <label>Money for extra expenditures:</label>
+                @Model.MoneyLeftOverYearly(Model.LocationList[i])
+                for ( int j = 0; j<Model.HobbiesList.Count;j++ )
+                {
+                    <br/>
+                    <text>You can consume</text>
+                    @Model.HobbiesConsumption(Model.MoneyLeftOverYearly(Model.LocationList[i]),
+                        Model.HobbiesList[j]) 
+                    <text>&nbsp;</text>@Model.HobbiesList[j].name
+                }
+                if ( Model.LocationList[i].isPurchase() )
+                {
+                    <label>Tips:</label>
+                    <p>
+                        -Save Home improvement receipts add to home selling price.
+                        -Energy-saving home improvements to your principal residence can earn you an additional tax break in the form of an energy tax credit worth up to $500. 
+                        -Another major benefit of owning a home is that the tax law allows you to shelter a large amount of profit from tax if certain conditions are met.
+                        -Deduct up to $100,000 on equity debt
+                        -Adjust your Witholdings.
+                        @if (Model.NoPenalty)
+                        {
+                            <text>-There is no penalty for withdrawling from IRA.</text>
+                        }
+                    </p>
+                }
+            }
+        }
+    }
+
+
 </div>
