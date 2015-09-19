@@ -11,13 +11,13 @@ namespace HobbyExpenditureCalculator.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(new Models.HomeViewModel());
         }
 
-        /*public ActionResult Index( HobbyExpenditureCalculator.Models.HomeViewModel model )
+        public ActionResult Index( HobbyExpenditureCalculator.Models.HomeViewModel model )
         {
-            return RedirectToAction("", "", new { });
-        }*/
+            return View(model);
+        }
         
         public ActionResult About()
         {

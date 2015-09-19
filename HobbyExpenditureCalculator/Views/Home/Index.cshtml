@@ -1,26 +1,34 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
+@model HobbyExpenditureCalculator.Models.HomeViewModel
 <script src='~/Content/Site.js'></script>
 
 <div class="row">
     <div class="jumbotron">
-        @using (Html.BeginForm())
+        @if (Model.HobbiesList.Count != 0)
         {
-            <fieldset background-color="#FFFF99">
-                @{ Html.RenderPartial("HomePartials/_UserInfo");}
-                <!-- Render Housing info partial -->
-                @{ Html.RenderPartial("HomePartials/_UserInfo2");}
+            Html.RenderPartial("HomePartials/_Results");
+        }
+        else
+        {
+            using (Html.BeginForm())
+            {
+                <fieldset background-color="#FFFF99">
+                    @{ Html.RenderPartial("HomePartials/_Home"); }
 
-                @{ Html.RenderPartial("HomePartials/_Rent");}
-            
-                @{ Html.RenderPartial("HomePartials/_Buy");}
+                    @{ Html.RenderPartial("HomePartials/_UserInfo");}
+                    <!-- Render Housing info partial -->
+                    @{ Html.RenderPartial("HomePartials/_UserInfo2");}
 
-                @{ Html.RenderPartial("HomePartials/_Hobbies");}
+                    @{ Html.RenderPartial("HomePartials/_Rent");}
 
-                @{ Html.RenderPartial("HomePartials/_Results");}
-            </fieldset>
+                    @{ Html.RenderPartial("HomePartials/_Buy");}
+
+                    @{ Html.RenderPartial("HomePartials/_Hobbies");}
+
+                </fieldset>
+            }
         }
         <hr>
        </div>
