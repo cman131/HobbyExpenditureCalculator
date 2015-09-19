@@ -174,12 +174,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-<<<<<<< HEAD
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\Resources\Hobbies.cs" />
-=======
-    <Compile Include="Models\LivingLocation.cs" />
->>>>>>> origin/master
+    <Compile Include="Models\Resources\LivingLocation.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
