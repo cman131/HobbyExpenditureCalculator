@@ -18,7 +18,15 @@ namespace HobbyExpenditureCalculator.Models
          *   housing unit for yearCount years with the given income
          */
         public abstract double getTotalCost();
+
+        /*
+         * Retrieves the total amount deducted from the individual's taxes relative to their home ownership
+         */
         public abstract double getTotalDeduction();
+
+        /*
+         * Checks if the person can afford to live here on their current income
+         */
         public abstract bool canAfford();
     }
 
@@ -95,10 +103,7 @@ namespace HobbyExpenditureCalculator.Models
             return monthly * 12 * this.yearCount + this.downPayment + 12 * this.yearCount *
                 this.premiumRate + 12 * this.yearCount * this.localPropertyTaxes;
         }
-
-        /*
-         * 
-         */
+        
         public override double getTotalDeduction()
         {
             double mortgage = getTotalCost() - this.downPayment - this.loan;
