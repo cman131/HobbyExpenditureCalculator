@@ -1,3 +1,15 @@
-﻿<div id="Rent" class="form-part" style="display:none">
-    <!-- Take back to userinfo2-->
-</div>
+﻿<script>
+    function showhobbies() {
+            document.getElementById('Rent').style.display = 'none'
+            document.getElementById('Hobbies').style.display = 'block'
+    }
+</script>
+<div id="Rent" class="form-part" style="display:none">
+    <!-- Take back to userinfo2 name, city, state -->
+    <label class='form-inline'>Rent Location Name<input type="text" class="" name="" /></label>
+    <label class='form-inline'> City Name<input type="text" class="" name="" /> </label>
+    <label class='form-inline'> State Name <input type="text" class="" name="" /></label>
+    <label class='form-inline'> Rent <input type="text" class="" name=""/></label>
+    <br/>
+    <button onclick="javascript: showhobbies()">Next</button>
+ </div>
